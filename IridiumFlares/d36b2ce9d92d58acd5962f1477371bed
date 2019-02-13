@@ -1,0 +1,18 @@
+
+<thead>
+<tr><td colspan="2">闪光详情</td></tr>
+</thead>
+<tbody>
+<tr><td align="right">日期: </td><td>2019年3月2日</td></tr>
+<tr><td align="right">时间: </td><td>5:23:56</td></tr>
+<tr><td align="right">亮度: </td><td>1</td></tr>
+<tr><td align="right">高度: </td><td>42°</td></tr>
+<tr><td align="right">方位角: </td><td>183°</td></tr>
+<tr><td align="right">卫星: </td><td><a href="satinfo.aspx?satid=27450&lat=39.9042&lng=116.4074&loc=%e5%8c%97%e4%ba%ac%e5%b8%82&alt=52&tz=ChST">铱 97</a></td></tr>
+<tr><td align="right">至卫星距离: </td><td>1082 千米</td></tr>
+<tr><td align="right">与闪光中心线的夹角: </td><td>2.5°</td></tr>
+<tr><td align="right">至闪光中心距离: </td><td>48 千米</td></tr>
+<tr><td align="right">产生闪光的天线: </td><td align="left">左</td></tr>
+<tr><td align="right">太阳高度: </td><td align="left">-16.8°</td></tr>
+<tr><td align="right">对太阳的张角: </td><td align="left">106.8°</td></tr>
+</tbody>

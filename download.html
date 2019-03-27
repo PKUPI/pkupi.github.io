@@ -25,11 +25,11 @@ function getUrlParam(name) {
 }
 var target = getUrlParam("target"),
 	id = getUrlParam("id"),
-	img = `${target}/${id}.png`,
+	img = `data/${target}/${id}.png`,
 	table = $("table")[0];
 $("a").attr("href", img).attr("download", id);
 $("img").attr("src", img);
-$.get(`${target}/${id}`, function(result) {
+$.get(`data/${target}/${id}`, function(result) {
 	$("table").html(result);
 	html2canvas(table).then(function(canvas) {
 		document.body.appendChild(canvas);

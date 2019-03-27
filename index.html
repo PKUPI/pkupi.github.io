@@ -243,7 +243,7 @@ function appendThead() {
 }
 
 function showData(target, type) {
-	var file = target + "/index.json";
+	var file = `data/${target}/index.json`;
 	$.ajax(file, {
 		type: "get",
 		dataType: "text",

@@ -188,7 +188,7 @@ td {
 <div class="container" style="margin-bottom: 30px;">
 	<h1>生成天象预告</h1>
 	<h2>让撰写《天象预告》实现社会主义四个现代化中技术现代化的自动化</h2>
-	<p>请在上方表格中勾选想要出现在天象报告中的项目，然后点击『生成』<br>系统会自动获取相关图片及生成文字描述，并导出为Word文档。再点击『下载』即可保存到本地<br>卫星过境信息默认按照推荐度排序，暂时不支持根据时间排序，请等待新功能<br><b>警告：生成的Word文档为Office 2007兼容格式，秀米无法读取，请使用最新版Microsoft Word打开并选择『另存为』</b></p>
+	<p>请在上方表格中勾选想要出现在天象报告中的项目，然后点击「生成」<br>系统会自动获取相关图片及生成文字描述，并导出为Word文档。再点击「下载」即可保存到本地<br>卫星过境信息默认按照推荐度排序，暂时不支持根据时间排序，请等待新功能<br><b>警告：生成的Word文档为Office 2007兼容格式，秀米无法读取，请使用最新版Microsoft Word打开并选择「另存为」</b></p>
 	<p>其它天象可参考<a href="https://interesting-sky.china-vo.org" target="_blank">有趣天文奇观</a>网站</p>
 	<a class="btn btn-success" href="javascript:generate()">生成</a>
 	<a class="btn btn-info disabled" href="#" id="download">下载</a>
@@ -236,7 +236,7 @@ function showData(target, type) {
 		},
 		success: function(data, status, xhr) {
 			var obj = JSON.parse(data);
-			if (type == 0) obj.forEach(function(ele, index) {
+			if (type === 0) obj.forEach(function(ele, index) {
 				var html = `<td><input type="checkbox" class="${target}" id="${ele[property[9]]}"></td>
 					<td>${ele[property[8]]}</td>
 					<td>${ele[property[1]]}</td>
@@ -250,15 +250,14 @@ function showData(target, type) {
 						for (var k in ele[property[3]][events[j]]) {
 							html += `<td>${ele[property[3]][events[j]][k]}</td>`;
 						}
-					}
-					else {
+					} else {
 						for (var k = 0; k < 6; k++) {
 							html += "<td>N/A</td>";
 						}
 					}
 				}
 				if (index < 3) $("#" + target).append(`<tr class="green">${html}</tr>`);
-				else if (ele[property[8]] == 0) $("#" + target).append(`<tr class="grey">${html}</tr>`);
+				else if (ele[property[8]] === 0) $("#" + target).append(`<tr class="grey">${html}</tr>`);
 				else $("#" + target).append(`<tr>${html}</tr>`);
 			});
 			else obj.forEach(function(ele, index) {
@@ -313,7 +312,7 @@ function getTable(src) {
 			$("body").append(table);
 			html2canvas(table[0]).then(function(canvas) {
 				document.body.appendChild(canvas);
-				var url = canvas.toDataURL("image/png");	
+				var url = canvas.toDataURL("image/png");
 				document.body.removeChild(canvas);
 				table.remove();
 				resolve(`<img src="${url}">`);
@@ -324,14 +323,14 @@ function getTable(src) {
 
 function generate() {
 	var target = $("input:checked");
-	if (target.length == 0) {
+	if (target.length === 0) {
 		alert("没有选中项！");
 		return;
 	}
 	var queue = [], text1, text2;
 	target.each(function(i, o) {
 		temp = $(o).parents("tr").children();
-		if ($(o).attr("class") == "IridiumFlares") {
+		if ($(o).attr("class") === "IridiumFlares") {
 			text1 = temp.eq(2).text() + temp.eq(3).text() + " 铱星闪光";
 			text2 = "最大亮度 " + temp.eq(4).text() + "等";
 		}

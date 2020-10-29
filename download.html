@@ -6,7 +6,7 @@
 <title>卫星详细信息</title>
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.jpg">
-<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas/dist/html2canvas.min.js"></script>
 <link rel="stylesheet" href="css/ha.css">
 </head>
@@ -18,13 +18,9 @@
 <table class="standardTable">
 </table>
 <script>
-function getUrlParam(name) {
-	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-	var r = window.location.search.substr(1).match(reg);
-	return (r != null) ? decodeURI(r[2]) : null;
-}
-var target = getUrlParam("target"),
-	id = getUrlParam("id"),
+var param = new URL(location.href).searchParams,
+	target = param.get("target"),
+	id = param.get("id"),
 	img = `data/${target}/${id}.png`,
 	table = $("table")[0];
 $("a").attr("href", img).attr("download", id);
